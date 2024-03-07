@@ -14,6 +14,19 @@
         $multiplication = $x * $y;
         echo "Date is: {$date} lol <br>";
         echo "Multiplication is: {$multiplication}";
+        
+        function getAge() {
+            return 25;
+        }
+        
+        function getGreeting() {
+            return "Hello";
+        }
+        
+        echo "My age is: {getAge()}"; // Wyświetli: My age is: 25
+        echo "<br>";
+        echo "{getGreeting()}, World!"; // Wyświetli: Hello, World!
+        
     ?>
 </body>
 </html>

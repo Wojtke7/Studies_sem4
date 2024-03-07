@@ -3,35 +3,35 @@ from dct_matrix import generate_dct_ii_matrix
 
 N = 20
 A = generate_dct_ii_matrix(N)
+# Transponowanie macierzy A
 S = np.transpose(A)
 
 # Mnożenie macierzy
 I = np.dot(S, A)
 
+matrix_error = np.max(np.abs(S - np.linalg.inv(A)))
 
-tolA = np.max(np.abs(S - np.linalg.inv(A)))
-
-isidentic = True
+isIdentic = True
 # Sprawdzenie czy macierz identycznościowa 
 for o in range(N):
     for p in range(N):
-        if abs(I[o, p]) != 0 and o != p:
-            isidentic = False
+        if not np.isclose(abs(I[o, p]), 0) and o != p:
+            isIdentic = False
 
-        if abs(I[o, p]) != 1 and o == p:
-            isidentic = False
+        if not np.isclose(abs(I[o, p]), 1) and o == p:
+            isIdentic = False
 
-if isidentic:
-    print(f'Macierz I jest identycznościowa z błędem: {tolA}')
+if isIdentic:
+    print(f'Macierz I jest identycznościowa błąd: {matrix_error}')
 else:
     print('Macierz I nie jest identycznościowa')
 
-srand = np.random.rand(N)
-X = np.dot(A, srand)
+random_signal = np.random.rand(N)
+X = np.dot(A, random_signal)
 
-rcnst = np.dot(S, X)
+reconstruction = np.dot(S, X)
 
-tolB = np.max(np.abs(srand - rcnst))
+reconstruction_error = np.max(np.abs(random_signal - reconstruction))
 
-if tolB < 1e-10:
-    print(f'Rekonstrukcja sygnału z błędem: {tolB}')
+if reconstruction_error < 1e-10:
+    print(f'Sygnał po rekonstrukcji z błędem: {reconstruction_error}')
