@@ -34,7 +34,7 @@ plt.plot(probe_time, s2(probe_time), 'r-o', label='s2 100Hz')
 plt.plot(probe_time, s3(probe_time), 'b-o', label='s3 150Hz')
 plt.title('Trzy sinusy do sumowania')
 plt.xlabel("Przedział czasowy próbkowania[s)")
-plt.ylabel("Amplitude")
+plt.ylabel("Amplitudas")
 plt.legend()
 
 plt.subplot(2, 1, 2)
@@ -84,7 +84,7 @@ plt.subplot(2, 1, 2)
 plt.plot(probe_time, reconstruction, 'g')
 plt.title('Rekonstrukcja sygnału sumy sinusów')
 
-plt.show()
+# plt.show()
 
 
 
@@ -134,7 +134,7 @@ plt.subplot(2, 1, 2)
 plt.plot(probe_time, reconstruction, 'g-')
 plt.title('Rekonstrukcja sygnału sumy sinusów')
 
-plt.show()
+# plt.show()
 
 
 

@@ -7,26 +7,25 @@
 </head>
 <body>
     <?php
-        echo "Hello World<br>\n";
-        $date = date('j-m-y, h:i:s');
-        $x = 5;
-        $y = 77;
-        $multiplication = $x * $y;
-        echo "Date is: {$date} lol <br>";
-        echo "Multiplication is: {$multiplication}";
-        
-        function getAge() {
-            return 25;
-        }
-        
-        function getGreeting() {
-            return "Hello";
-        }
-        
-        echo "My age is: {getAge()}"; // Wyświetli: My age is: 25
-        echo "<br>";
-        echo "{getGreeting()}, World!"; // Wyświetli: Hello, World!
-        
-    ?>
+            echo "Hello World\n";
+            $date = date('j-m-y, h:i:s');
+            $x = 5;
+            $y = 77;
+            $multiplication = $x * $y;
+            echo "Date is: {$date} lol \n";
+            echo "Multiplication is: {$multiplication}\n";
+            
+            function getAge() {
+                return 25;
+            }
+            
+            function getGreeting() {
+                return "Hello";
+            }
+            
+            echo "My age is: {getAge()}\n"; // Wyświetli: ?
+            echo "{getGreeting()}, World!"; // Wyświetli: ?
+            
+        ?>
 </body>
 </html>
