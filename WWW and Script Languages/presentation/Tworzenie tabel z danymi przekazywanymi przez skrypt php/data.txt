@@ -1,0 +1,3 @@
+Pierwsza,123
+Druga,456
+Trzecia,789
