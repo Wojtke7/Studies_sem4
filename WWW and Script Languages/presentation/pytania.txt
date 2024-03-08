@@ -1,0 +1,38 @@
+1.Pytanie: Która z poniższych funkcji służy do dynamicznego dołączania plików do skryptu PHP?
+
+a) include_once()
+b) require_once()
+c) load_file()
+d) import()
+Odpowiedź: a) include_once()
+
+2.Pytanie: Jak nazywa się mechanizm w PHP, który automatycznie ładowuje klasy, gdy są one potrzebne?
+
+a) AutoLoad
+b) ClassLoader
+c) LoadClass
+d) Autoloading
+Odpowiedź: d) Autoloading
+
+3.Pytanie: Który operator porównuje zarówno wartości, jak i typy zmiennych w PHP?
+
+a) ==
+b) ===
+c) =
+d) !=
+Odpowiedź: b) ===
+
+4. Pytanie: Która zmienna superglobalna w PHP przechowuje w bezpieczny sposób dane przesłane do skryptu ?
+
+a) $_GET
+b) $_POST
+c) $_REQUEST
+d) $_SERVER
+Odpowiedź: b) $_POST
+
+5. Pytanie: Czy w PHP można tworzyć tablicę zawierające różne typy danych ? 
+a) Tak
+b) Nie
+c) To zależy
+d) Sprzedam Opla
+Odpowiedź: a) Tak
