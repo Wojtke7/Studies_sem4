@@ -7,13 +7,11 @@
 </head>
 <body>
     <?php
-        $a = '1';
-        echo ++$a;        
+        $array = array(10, "20", true, null);
+        foreach ($array as $value) {
+            echo ($value) . "\n" ;
+            echo gettype($value) . "<br>";
+        }        
     ?>
-
-    <form method="post" action="array_datatypes.php">
-        <input type="submit" value="Next" name="next_submit">
-    </form>
-
 </body>
 </html>

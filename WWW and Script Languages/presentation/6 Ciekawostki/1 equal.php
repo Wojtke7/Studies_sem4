@@ -23,16 +23,16 @@
     // Operator potrójnego porównania "===" porównuje wartości oraz typy danych
 
     if ($a === $b) {
-        echo "Identical\n";
+        echo "Equal\n";
     } else {
-        echo "Not Identical\n";
+        echo "Not Equal\n";
     }
 
     ?>
 
     <br><br>
     
-    <form method="post" action="conversion.php">
+    <form method="post" action="2 conversion.php">
         <input type="submit" value="Next" name="next_submit">
     </form>
 

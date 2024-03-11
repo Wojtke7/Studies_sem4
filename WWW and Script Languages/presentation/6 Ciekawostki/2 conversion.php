@@ -19,7 +19,7 @@
     
     ?>
 
-    <form method="post" action="incrementation.php">
+    <form method="post" action="3 incrementation.php">
         <input type="submit" value="Next" name="next_submit">
     </form>
 </body>

@@ -1,5 +1,4 @@
 <?php
-// index.php
 
 // Załączenie pliku zawierającego autoloader
 include_once('autoloader.php');
