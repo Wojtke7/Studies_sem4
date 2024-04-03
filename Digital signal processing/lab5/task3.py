@@ -13,6 +13,9 @@ freq_64 = 64e3
 freq_112 = 112e3
 freq_128 = 128e3
 
+
+# Output zpk oznacza zwrócenie zer, biegunów i stałej wzmocnienia
+
 # Butterworth Filter Design
 z_butter, p_butter, k_butter = butter(N=7, Wn=2 * np.pi * freq_64, analog=True, output='zpk')
 # Konwersja na współczynniki licznika i mianownika transmitancji

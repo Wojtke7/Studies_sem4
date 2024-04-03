@@ -67,12 +67,14 @@ b = [np.prod(-poles4)]
 H = TransferFunction(b, a)
 
 # Odpowiedź impulsowa
+# oś wyskalowana w czasie
 tOut, y = impulse(H)
 plt.figure()
 plt.plot(tOut, y)
 plt.title("Odpowiedź impulsowa")
 
 # Odpowiedź na skok jednostkowy
+# oś wyskalowana w czasie
 tOut, y = step(H)
 plt.figure()
 plt.plot(tOut, y)
