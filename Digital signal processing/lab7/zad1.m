@@ -5,7 +5,7 @@ clear all; close all;
 
 
 %% Dane
-N = 128;        % liczba próbek
+N = 129;        % liczba próbek
 fs = 1200;      % czżęstotliwość próbkowania
 
 fp = 200;       % pasmo o szerokości 200Hz
@@ -221,4 +221,23 @@ xlabel('Częstotliwość [Hz]');
 ylabel('Amplituda [dB]');
 grid;
 hold off;
+
+% Przyjmij stała długość filtru
+%N=128 próbek albo 129 próbek. Jakie są konsekwencje tej różnicy?
+
+
+% Z wykresów wynika, że w "nieidealnym" filtrze FIR zawsze występuje pasmo 
+% przejściowe (transition band) w pobliżu częstotliwości granicznej. 
+% Zgodnie z przewidywaniem, większa długość filtru powoduje zmniejszenie szerokości
+% pasma przejściowego. W paśmie zaporowym występują zafalowania, 
+% ich kształt również zależy od długości filtru.
+
+% Większe okno obejmie dłuższy fragment idealnej odpowiedzi impulsowej filtru, 
+% a więc można się spodziewać że charakterystyka filtru będzie "dokładniejsza".
+
+% FIR. Polega na mnożeniu idealnej charakterystyki filtru 
+% (np. dolnoprzepustowego, górnoprzepustowego, pasmowości pasywnej itp.) 
+% przez tzw. funkcję okna. Funkcja okna jest używana do ograniczenia 
+% odpowiedzi impulsowej filtra, co pozwala na kontrolę przebiegu czasowego 
+% i częstotliwościowego charakterystyki filtru.
 
