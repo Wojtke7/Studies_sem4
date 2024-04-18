@@ -1,7 +1,5 @@
 clc;
-% Zadanie 2 - Filtry dla radia FM
 clear all; close all;
-
 
 
 %% Dane
@@ -110,25 +108,17 @@ s = s-127;
 
 % IQ --> complex
 wideband_signal = s(1:2:end) + sqrt(-1)*s(2:2:end); clear s;
-%figure(1);
-%psd(spectrum.welch('Hamming',1024), wideband_signal(1:N),'Fs',fs);
 
 % Extract carrier of selected service, then shift in frequency the selected service to the baseband
-%figure(2);
 wideband_signal_shifted = wideband_signal .* exp(-sqrt(-1)*2*pi*fc/fs*[0:N-1]');
-%psd(spectrum.welch('Hamming',1024), wideband_signal_shifted(1:N),'Fs',fs);
 
 % % Filter out the service from the wide-band signal
 [b,a] = butter(4, bwSERV/fs);
 
 wideband_signal_filtered = filter( b, a, wideband_signal_shifted );
-%figure(3);
-%psd(spectrum.welch('Hamming',1024), wideband_signal_filtered(1:N),'Fs',fs);
 
 % Down-sample to service bandwidth - bwSERV = new sampling rate
 x = wideband_signal_filtered( 1:fs/(bwSERV*2):end );
-%figure(4);
-%psd(spectrum.welch('Hamming',1024), x,'Fs',(bwSERV*2)); % fs/(fs/(bwSERV*2))
 
 % FM demodulation
 dx = x(2:end).*conj(x(1:end-1));
@@ -168,6 +158,10 @@ figure(10);
 %psd(spectrum.welch('Hamming',1024), y_pilot,'Fs',bwSERV);
 pwelch(y_pilot, 4096, 4096-512, [18e3:1:20e3], bwSERV*2);
 title("Gęstość widmowa mocy dla pilota");
+
+
+
+
 % Listen to the final result
 ym = ym-mean(ym);
 ym = ym/(1.001*max(abs(ym)));
