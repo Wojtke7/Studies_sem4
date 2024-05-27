@@ -7,7 +7,7 @@ points = 4096
 N = 4  # Maksymalny rząd filtra ustawiony na 4
 mid_freq_unscaled = 96
 mid_freq = 2 * np.pi * 1e6 * mid_freq_unscaled  # Przeliczenie na radiany/s
-tollerance_unscaled = 100
+tollerance_unscaled = 50
 tollerance = 2 * np.pi * 1e3 * tollerance_unscaled  # Przeliczenie na radiany/s
 
 # Zakres częstotliwości
@@ -34,4 +34,11 @@ plt.grid(True)
 plt.title("Odpowiedź częstotliwościowa")
 plt.xlabel("Częstotliwość (MHz)")
 plt.ylabel("Odpowiedź (dB)")
+
+# Dodanie linii charakterystycznych
+plt.axvline((mid_freq - tollerance) / (2 * np.pi * 1e6), color='r', linestyle='--', label='Granica pasma przepustowego')
+plt.axvline((mid_freq + tollerance) / (2 * np.pi * 1e6), color='r', linestyle='--')
+
+plt.legend()
+
 plt.show()

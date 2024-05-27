@@ -72,8 +72,8 @@ plt.show()
 # gdzie amplituda jest niska.
 
 # Jakie jest maksymalne i minimalne tłumienie w paśmie zaporowym?
-# Max = około -341dB
-# Min = około -10dB
+# Max = około 341dB
+# Min = około 10dB
 # Maksymalne tłumienie w
 # paśmie zaporowym można odczytać z wykresu odpowiedzi częstotliwościowej. Jest to wartość amplitudy dla
 # częstotliwości w paśmie zaporowym. Minimalne tłumienie jest w paśmie przepustowym, gdzie amplituda jest maksymalna.
