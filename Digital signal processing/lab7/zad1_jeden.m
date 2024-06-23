@@ -115,8 +115,10 @@ ylabel('Amplituda [dB]');
 grid;
 hold off;
 
+
 % Na wykresie odpowiedzi impulsowej widzimy że, jest ona symetryczna. 
 % Ponieważ wybraliśmy parzystą liczbę próbek (128), środek symetrii 
 % leży pomiędzy środkowymi próbkami. Gdybyśmy wzięli nieparzystą długość filtru, 
 % środkowa próbka wyznaczałaby środek symetrii.
 
+% Przez to że, 

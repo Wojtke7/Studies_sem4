@@ -13,9 +13,10 @@ d(1,:) = x(1,:);
 d(2:end, :) = x(2:end, :) - a * x(1:end-1, :);
 
 %% Kwantyzacja
+% Kwantyzujemy dwa razy bo mamy dźwięk w stereo lewi i prawy sygnał
 dq(:,1) = lab11_kwant(d(:,1) - mean(d(:,1)), mean(d(:,1)));
 dq(:,2) = lab11_kwant(d(:,2) - mean(d(:,2)), mean(d(:,2)));
-
+% Może wystąpić błąd kwantyzacji, dlatego jest to kompresja stratna 
 %% Dekodowanie
 y = zeros(size(x));
 y(1,:) = dq(1,:);

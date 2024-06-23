@@ -3,12 +3,12 @@ clear all; close all;
 [x,Fs] = audioread( 'DontWorryBeHappy.wav', 'native' ); % wczytanie próbki dźwiękowej
 
 x = double( x );
-% x= lowpass(x,0.3);
+x= lowpass(x,0.3);
 a = 0.9545; % parametr a kodera (współczynnik predykcji)
 d = x - a*[[0,0]; x(1:end-1,:)]; % KODER
 
 %% KWANTYZACJA
-ile_bitow = 16; % rozdzielczosc sygnalu w bitach - ilosc stanow 2^n
+ile_bitow = 4; % rozdzielczosc sygnalu w bitach - ilosc stanow 2^n
 dq = lab11_kwant(d,ile_bitow); % kwantyzator
 
 

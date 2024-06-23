@@ -127,11 +127,10 @@ figure(5);
 psd(spectrum.welch('Hamming',1024), y,'Fs',(bwSERV*2));
 title('Gęstośc widmowa mocy sygnału');
 
-% Decimate to audio signal bandwidth bwAUDIO
-%[b_down,a_down] = butter(4, bwAUDIO/(bwSERV*2));
-% 
 Wn_down = (15e3*2)/(bwSERV*2);
-b_down = fir1(128, Wn_down, blackmanharris(128+1));
+% Decimate to audio signal bandwidth bwAUDIO
+% [b_down,a_down] = butter(4, bwAUDIO/(bwSERV*2));
+b_down = fir1(128, Wn_down, hamming(128+1));
 a_down = 1;
 figure(6);
 freqz(b_down, a_down, 512, (bwSERV*2));
@@ -140,12 +139,15 @@ y_audio = filter( hHamMono, a_down, y ); % antyaliasing filter
 figure(7);
 psd(spectrum.welch('Hamming',1024), y_audio,'Fs',bwAUDIO);
 title("Charakterystyka A-cz po zastosowaniu antyaliasingu")
-% ym = y(bwSERV/bwAUDIO);  % decimate (1/5)
+% decimate (1/5)
 ym = y_audio(1:5:end);
 
+
 % PILOT
+% Pasmo
 Wn_pilot = [(18.95e3*2)/(bwSERV*2) (19.05e3*2)/(bwSERV*2)];
-b_pilot = fir1(128, Wn_pilot, blackmanharris(128+1));
+% Zamiana filtru irr na fir
+b_pilot = fir1(128, Wn_pilot, hamming(128+1));
 a_pilot = 1;
 figure(8);
 freqz(b_pilot, a_pilot, 512, bwSERV*2);
@@ -155,11 +157,8 @@ figure(9)
 spectrogram(y_pilot, 4096, 4096-512, [18e3:1:20e3], bwSERV*2);
 title("Wykres spektrogramu dla pilota");
 figure(10);
-%psd(spectrum.welch('Hamming',1024), y_pilot,'Fs',bwSERV);
 pwelch(y_pilot, 4096, 4096-512, [18e3:1:20e3], bwSERV*2);
 title("Gęstość widmowa mocy dla pilota");
-
-
 
 
 % Listen to the final result

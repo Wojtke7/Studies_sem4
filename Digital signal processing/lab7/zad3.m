@@ -49,6 +49,7 @@ title("Gęstość widmowa mocy sygnału");
 
 
 % PILOT
+%Częstotliwości graniczne
 Wn_pilot = [(18.95e3*2)/(bwSERV*2) (19.05e3*2)/(bwSERV*2)];
 b_pilot = fir1(128, Wn_pilot, blackmanharris(128+1));
 a_pilot = 1;
@@ -80,6 +81,9 @@ ym = y_audio_sum(1:5:end);
 % Stereo
 Wn_dif = [(23e3*2)/(bwSERV*2) (53e3*2)/(bwSERV*2)];
 b_dif = fir1(128, Wn_dif, blackmanharris(128+1));
+% W przypadku filtrów FIR, mianownik jest zawsze równy 1, 
+% ponieważ nie ma sprzężenia zwrotnego w filtrach FIR, 
+% a ich odpowiedź impulsowa jest skończona.
 a_dif = 1;
 figure(11);
 freqz(b_dif, a_dif, 512, (bwSERV*2));
