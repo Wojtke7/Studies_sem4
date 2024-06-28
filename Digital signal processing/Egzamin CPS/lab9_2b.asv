@@ -90,12 +90,4 @@ legend('Sygnal czysty','Zaszumiony (2 osoby)','Po odzyskaniu (druga pani przycis
 % obliczeniowa, mniej współczynników do dostosowania (mniejsza dokładność)
 
 %% Współczynnik adaptacji mi
-% krok adaptacji, kontroluje szybkość, z jaką algorytm LMS dostosowuje swoje współczynniki filtra.
-% Jest to kluczowy parametr, który wpływa na stabilność i szybkość konwergencji algorytmu.
-
-% Mały współczynnik - powolne zmiany współczynników filtra, zwiększa
-% stabilność ale wolniejsza konwergencja - słabsze dostosowywanie się
-
-% Duży współczynnik - szybkie zmiany współczynników, mniejsza stabliność
-% (współczynniki filtra mogą nadmiernie oscylować, zmieniają się w
-% niekontrolowany sposób) (zwiększona podatność na zakłócenia)
+% 
